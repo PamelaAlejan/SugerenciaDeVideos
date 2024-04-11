@@ -43,8 +43,19 @@ class Reproductor extends Multimedia {
 
     }
 
-    setInicio() {
-        this._id.setAttribute('src', `${this._url}?start=${tiempo}`);
+    setInicio(tiempo) {
+        this._id.setAttribute('src', `${this._url}&amp;start=${tiempo}`);
 
     }
 }
+
+let musica = new Reproductor("https://www.youtube.com/embed/6WeMiC-CJHA?si=JVqUCPHk9Ub4FqZn", "musica");
+let pelicula = new Reproductor('https://www.youtube.com/embed/FjzxI6uf8H8?si=P9BvegwKYLTTppJy', "peliculas");
+let serie = new Reproductor("https://www.youtube.com/embed/C8XJ_xWF2ZE?si=ABzT-_kAwoUf7LFj", "series");
+
+musica.playMultimedia();
+pelicula.playMultimedia();
+
+
+serie.setInicio(10);
+serie.playMultimedia();
